@@ -26,13 +26,24 @@ async function getRSS() {
 
 
 
+/* 
+x = xmlDoc.getElementsByTagName("book")[0];
+xlen = x.childNodes.length;
+y = x.firstChild;
+
+txt = "";
+for (i = 0; i < xlen; i++) {
+    // Process only element nodes (type 1)
+    if (y.nodeType == 1) {
+        txt += y.nodeName + "<br>";
+    }
+    y = y.nextSibling;
+}
+ */
 
 
 
-
-
-
-async function fetchXML(theURL, newsConfig) {
+async function fetchXML(theURL) {
     const xmlParser = new DOMParser();
     const response = await fetch(theURL);
     const xmlString = await response.text();
@@ -40,39 +51,72 @@ async function fetchXML(theURL, newsConfig) {
     var xmlDoc = xmlParser.parseFromString(xmlString, 'text/xml');
 
 
-    newsConfig["New York Times"]; // returns =>   {"title": "title content", "link": "link"}
-    newsConfig["New York Times"].title; // returns => "title content"
+/*     newsConfig["New York Times"]; // returns =>   {"title": "title content", "link": "link"}
+    newsConfig["New York Times"].title; // returns => "title content" */
     articles = xmlDoc.documentElement.getElementsByTagName("item")
 
-    console.log(articles.length)
+    
+    console.log(articles.length, articles[0], articles[0].nodeValue)
     allArticles = [];
-    for (a = 0; a < articles.length; a++) {
+    for (a = 0; a < 1; a++) {
 
+        if (a == 0){
+            console.log("pass")
+        }
         let articleJSON = {};
 
+        x = articles[0].childNodes[1].textContent;
+        console.log(x)
+
+        console.log(articles[0].childNodes.length)
+        xlen = articles[0].childNodes.length;
+        y = articles[0].firstChild;
+
+        txt = "";
+        for (i = 0; i < xlen; i++) {
+            // Process only element nodes (type 1)
+            if (y.nodeType == 1) {
+                txt += y.nodeName + "<br>";
+                console.log(y.nodeName, y.textContent)
+            }
+            y = y.nextSibling;
+        }
+        
+        /* console.log(y.nodeType) */
+
+        z = articles[a].getElementsByTagName("title").innerHTML;
+        console.log(z)
+
+
+        /* y = articles[a].getAttributeNode("title"); */
+
         // { "title": articles[a].getElementsByTagName("title")[0]};
-        articlesJSON.title = articles[a].getElementsByTagName("title")[0]
-        articlesJSON.link = articles[a].getElementsByTagName("link")[0]
-        articlesJSON.description = articles[a].getElementsByTagName("description")[0]
-        articlesJSON.link = articles[a].getElementsByTagName("link")[0]
-        articlesJSON.link = articles[a].getElementsByTagName("link")[0]
+        node = articles[a].getElementsByTagName("title")
+
+        console.log(node)
+        console.log(node.nodeValue)
+
+        articleJSON.title = articles[a].getElementsByTagName("title")[0]
+        console.log(node.nodeValue)
+        /* articleJSON.title = y.nodeValue */
+
+        articleJSON.link = articles[a].getElementsByTagName("link")[0]
+        articleJSON.description = articles[a].getElementsByTagName("description")[0]
 
 
-
-
-
-        console.log(articles[a].getElementsByTagName("title")[0])
+        /* console.log(articles[a].getElementsByTagName("description")[0]) */
 
         allArticles.push(articleJSON)
     }
+    console.log(allArticles)
 
     /* xmlToJson(XmlNode) */
 
-    articles = xmlDoc.getElementsByTagName("item")
+    /* articles = xmlDoc.getElementsByTagName("item") */
 
-    console.log(articles)
+    console.log(allArticles[0])
 
-    return (XmlNode)
+    return (allArticles)
 
 }
 
@@ -143,18 +187,13 @@ xmlToJson(YourXmlNode);
 */
 
 $(document).ready(function () {
+    console.log("What's up")
     const rssURL = 'https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml';
     /*     rssXML = getRSS(rssURL);
         console.log("Return from getRSS \n", rssXML) */
 
     rt = fetchXML(rssURL);
-    /* console.log(rt) */
-
-
-    /*     const response = await fetch(rssURL);
-        const xmlString = await response.text();
-        console.log(response.text)
-        var XmlNode = new DOMParser().parseFromString(xmlString, 'text/xml');
-        xmlToJson(XmlNode); */
+    console.log(rt[0])
+    
 
 });
