@@ -71,17 +71,22 @@ async function fetchXML(theURL) {
         console.log(articles[0].childNodes.length)
         xlen = articles[0].childNodes.length;
         y = articles[0].firstChild;
+        newsConfig = ["title", "link"]
 
-        txt = "";
         for (i = 0; i < xlen; i++) {
             // Process only element nodes (type 1)
             if (y.nodeType == 1) {
-                txt += y.nodeName + "<br>";
+                for (n = 0; n< newsConfig.length; n++){
+                    if (y.nodeName == newsConfig[n]){
+                        articleJSON[newsConfig[n]] = y.textContent
+                    }
+                }
                 console.log(y.nodeName, y.textContent)
             }
             y = y.nextSibling;
         }
         
+        console.log(articleJSON)
         /* console.log(y.nodeType) */
 
         z = articles[a].getElementsByTagName("title").innerHTML;
@@ -91,13 +96,13 @@ async function fetchXML(theURL) {
         /* y = articles[a].getAttributeNode("title"); */
 
         // { "title": articles[a].getElementsByTagName("title")[0]};
-        node = articles[a].getElementsByTagName("title")
+/*         node = articles[a].getElementsByTagName("title")
 
         console.log(node)
-        console.log(node.nodeValue)
+        console.log(node.nodeValue) */
 
-        articleJSON.title = articles[a].getElementsByTagName("title")[0]
-        console.log(node.nodeValue)
+        articleJSON.title = articles[a].getElementsByTagName("title").innerHTML
+        console.log(articleJSON.title)
         /* articleJSON.title = y.nodeValue */
 
         articleJSON.link = articles[a].getElementsByTagName("link")[0]
