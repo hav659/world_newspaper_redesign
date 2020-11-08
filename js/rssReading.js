@@ -13,19 +13,25 @@ async function fetchXML(theURL) {
     
     console.log(articles.length, articles[0], articles[0].nodeValue)
     allArticles = [];
-    for (a = 0; articles.length; a++) {
+    for (a = 0; a < articles.length; a++) {
 
         if (a == 0){
             console.log("pass")
         }
         let articleJSON = {};
 
-        x = articles[0].childNodes[1].textContent;
-        console.log(x)
+        
+        /* 
+        This lets you get see the value of the xml for the second item in the list
+        x = articles[a].childNodes[1].textContent;
+        console.log(x) */
 
-        console.log(articles[0].childNodes.length)
-        xlen = articles[0].childNodes.length;
-        y = articles[0].firstChild;
+        /* 
+        How many children or tags are within each parent
+        console.log(articles[0].childNodes.length) 
+        */
+        xlen = articles[a].childNodes.length;
+        y = articles[a].firstChild;
         newsConfig = ["title", "link"]
 
         for (i = 0; i < xlen; i++) {
@@ -53,10 +59,31 @@ async function fetchXML(theURL) {
 
     console.log(allArticles[0])
 
+    createArticles(allArticles)
     return (allArticles)
 
 }
 
+
+function createArticles(jsonArray) {
+    console.log("work");
+
+    $.each(jsonArray, function (arrayKey, arrayItem) {
+
+        /* This is a template string a mixture of JS and HTML */
+        var articleCard = `<div class="articleCard">
+                            <div class="articleTitle">${arrayItem.title} </div> 
+                            <div class="author">${arrayItem.description}</div> <div class="articleYear">${arrayItem.year} </div><div class="articleJournal">${arrayItem.journal} </div> 
+                            <div class="doi"><a href="https://doi.org/${arrayItem.link}">Get the article</a></div>
+                            </div>`
+        $("#outputDiv").append(articleCard)
+        /* console.log(jsonArray[arrayItem].year) */
+        /* console.log(arrayItem.year) */
+        /* items.push( "<li id='" + key + "'>" + val + "</li>" ); */
+    });
+
+
+};
 
 
 $(document).ready(function () {
