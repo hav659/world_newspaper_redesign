@@ -1,25 +1,21 @@
-async function fetchXML(theURL) {
+async function fetchXML(theURL, newsConfig) {
     const xmlParser = new DOMParser();
     const response = await fetch(theURL);
     const xmlString = await response.text();
 
     var xmlDoc = xmlParser.parseFromString(xmlString, 'text/xml');
-
+    console.log("HERE", Object.values(newsConfig))
 
 /*     newsConfig["New York Times"]; // returns =>   {"title": "title content", "link": "link"}
     newsConfig["New York Times"].title; // returns => "title content" */
-    articles = xmlDoc.documentElement.getElementsByTagName("item")
+    articles = xmlDoc.documentElement.getElementsByTagName(newsConfig["articleDelimiter"])
 
     
-    console.log(articles.length, articles[0], articles[0].nodeValue)
+    /* console.log(articles.length, articles[0], articles[0].nodeValue) */
     allArticles = [];
     for (a = 0; a < articles.length; a++) {
 
-        if (a == 0){
-            console.log("pass")
-        }
         let articleJSON = {};
-
         
         /* 
         This lets you get see the value of the xml for the second item in the list
@@ -32,7 +28,8 @@ async function fetchXML(theURL) {
         */
         xlen = articles[a].childNodes.length;
         y = articles[a].firstChild;
-        newsConfig = ["title", "link"]
+        newsConfig = Object.values(newsConfig)
+        /* console.log(newsConfig) */
 
         for (i = 0; i < xlen; i++) {
             // Process only element nodes (type 1)
@@ -74,7 +71,7 @@ function createArticles(jsonArray) {
         var articleCard = `<div class="articleCard">
                             <div class="articleTitle">${arrayItem.title} </div> 
                             <div class="author">${arrayItem.description}</div> <div class="articleYear">${arrayItem.year} </div><div class="articleJournal">${arrayItem.journal} </div> 
-                            <div class="doi"><a href="https://doi.org/${arrayItem.link}">Get the article</a></div>
+                            <div class="doi"><a href="${arrayItem.link}">Get the article</a></div>
                             </div>`
         $("#outputDiv").append(articleCard)
         /* console.log(jsonArray[arrayItem].year) */
@@ -88,12 +85,27 @@ function createArticles(jsonArray) {
 
 $(document).ready(function () {
     console.log("What's up")
-    const rssURL = 'https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml';
+    console.log(rssFeedConfig)
+
+    
+    const corsAnywhere = "https://cors-anywhere.herokuapp.com/";
+    var rssURL = ''
+    for (const newsPaper in rssFeedConfig) {
+        console.log(newsPaper, rssFeedConfig[newsPaper].url)
+        rssURL = rssFeedConfig[newsPaper].url;
+        rt = fetchXML(rssURL, rssFeedConfig[newsPaper]);
+
+        /* console.log(`${newsPaper}: ${rssFeedConfig[newsPaper]}`); */
+    } 
+
+    /* const rssURL = 'https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml'; */
+    
+    
     /*     rssXML = getRSS(rssURL);
         console.log("Return from getRSS \n", rssXML) */
 
-    rt = fetchXML(rssURL);
-    console.log(rt[0])
+    
+    /* console.log(rt[0]) */
     
 
 });

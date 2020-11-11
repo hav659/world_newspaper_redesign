@@ -1,11 +1,17 @@
+const corsAnywhere = "https://cors-anywhere.herokuapp.com/";
+
 var rssFeedConfig = {
-    "New Delhi Times": {
-        "title": "title",
-        "link": "artictleTitle"
-    },
     "New York Times": {
+        "url": "https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml",
+        "articleDelimiter": "item",
         "title": "title",
         "link": "link"
+    },
+    "Japan": {
+        "url": corsAnywhere + "http://www.japantimes.co.jp/feed/topstories",
+        "articleDelimiter": "item",
+        "title": "title",
+        "link": "artictleTitle"
     }
 
 
@@ -15,3 +21,4 @@ var rssFeedConfig = {
 
 
 
+/* https://www.egyptindependent.com/category/egypt/feed/ */
