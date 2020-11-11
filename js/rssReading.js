@@ -88,24 +88,16 @@ $(document).ready(function () {
     console.log(rssFeedConfig)
 
     
-    const corsAnywhere = "https://cors-anywhere.herokuapp.com/";
     var rssURL = ''
     for (const newsPaper in rssFeedConfig) {
         console.log(newsPaper, rssFeedConfig[newsPaper].url)
         rssURL = rssFeedConfig[newsPaper].url;
         rt = fetchXML(rssURL, rssFeedConfig[newsPaper]);
 
-        /* console.log(`${newsPaper}: ${rssFeedConfig[newsPaper]}`); */
     } 
 
     /* const rssURL = 'https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml'; */
     
-    
-    /*     rssXML = getRSS(rssURL);
-        console.log("Return from getRSS \n", rssXML) */
-
-    
-    /* console.log(rt[0]) */
     
 
 });
