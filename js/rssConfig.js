@@ -14,7 +14,6 @@ var rssFeedConfig = {
         "link": "artictleTitle"
     }
 
-
 }
 
 
