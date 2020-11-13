@@ -23,7 +23,7 @@ var rssFeedConfig = {
         "url": corsAnywhere + "http://feeds.news24.com/articles/News24/Africa/rss",
         "articleDelimiter": "item",
         "title": "title",
-        "link": "artictleTitle"
+        "link": "link"
     },
     "South China": {
         "url": corsAnywhere + "https://www.scmp.com/rss/91/feed",
