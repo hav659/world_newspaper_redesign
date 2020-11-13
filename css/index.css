@@ -149,72 +149,52 @@ h6,
 
 /* NEWS ARTICLE CARDS */
 .outputDiv{
-justify-content: center;
-align-content: center;
+
 }
 
 .articleCard{
   margin: 20px 20px;
   padding: 10px;
-  display: flex;
+  display: ;
   border: none;
   background-color: #0A5E88;
   color: white;
 }
 
 .articleTitle {
-    grid-area: articleTitle;
+
     font-size: 30px;
     padding-bottom: 10px;
 }
 
 .author {
-    grid-area: author;
+
     font-size: 16px;
     padding-bottom: 5px;
 }
 
 .articleYear {
-    grid-area: articleYear;
+
     padding-bottom: 5px;
 
 }
 
 .articleJournal {
-    grid-area: articleJournal;
+
     font-style: italic;
     font-size: 18px;
 }
 
-.doi{
-    grid-area: doi;
-}
-
-.abstract{
-    grid-area: abstract;
-    cursor: pointer;
-}
-
 .articleDescription{
     font-size: 12px;
-    grid-area: articleDescription;
+
 }
 
 .citation{
-    grid-area: cite;
+
 
 }
 
-.empty{
-    grid-area: empty;
-    display: none;
-    height: 0px;
-    margin: -10px 0px -10px 0px;
-}
-.articleHighlights{
-    grid-area: highlights;
-    cursor: pointer;
-}
 
 /* tablets */
 @media only screen and (max-width: 768px) {
