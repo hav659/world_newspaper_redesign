@@ -1,3 +1,7 @@
+.header {
+  background-color: #FDFAEE;
+}
+
 .reset-anchor {
   color: inherit;
   border: none;
@@ -16,8 +20,7 @@
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
-  margin-right: 1rem;
-  font-size: 1.25rem;
+
 }
 
 .navbar-toggler {
@@ -66,38 +69,10 @@
 .navbar-light .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
-.dropdown-menu {
-  min-width: 10rem;
-  padding: 0.5rem 0;
-  margin: 0.125rem 0 0;
-  font-size: 1rem;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 0rem;
-}
 
-.dropdown-item {
-  padding: 0.25rem 1.5rem;
-  font-weight: 400;
-  color: #212529;
-}
-
-.dropdown-item:hover, .dropdown-item:focus {
-  color: #16181b;
-  background-color: #f8f9fa;
-}
-
-.dropdown-item.active, .dropdown-item:active {
-  color: #fff;
+.btn-primary {
   background-color: #0A5E88;
 }
-
-.dropdown-item.disabled, .dropdown-item:disabled {
-  color: #6c757d;
-}
-
 
 /* BODY STYLE SETUP */
 body {
@@ -175,16 +150,13 @@ h6,
 /* NEWS ARTICLE CARDS */
 .outputDiv{
 justify-content: center;
-align-content: space-between;
+align-content: center;
 }
 
 .articleCard{
   margin: 20px 20px;
   padding: 10px;
   display: flex;
-
-  height: auto;
-  width: 75%;
   border: none;
   background-color: #0A5E88;
   color: white;
