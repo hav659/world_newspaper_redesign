@@ -18,8 +18,25 @@ var rssFeedConfig = {
         "articleDelimiter": "item",
         "title": "title",
         "link": "artictleTitle"
+    },
+    "South Africa": {
+        "url": corsAnywhere + "http://feeds.news24.com/articles/News24/Africa/rss",
+        "articleDelimiter": "item",
+        "title": "title",
+        "link": "link"
+    },
+    "South China": {
+        "url": corsAnywhere + "https://www.scmp.com/rss/91/feed",
+        "articleDelimiter": "item",
+        "title": "title",
+        "link": "artictleTitle"
+    },
+    "Turkey": {
+        "url": corsAnywhere + "https://www.dailysabah.com/rssFeed/12/13",
+        "articleDelimiter": "item",
+        "title": "title",
+        "link": "artictleTitle"
     }
-
 }
 
 
