@@ -12,6 +12,12 @@ var rssFeedConfig = {
         "articleDelimiter": "item",
         "title": "title",
         "link": "artictleTitle"
+    },
+    "Egypt": {
+        "url": corsAnywhere + "https://www.egyptindependent.com/category/egypt/feed/",
+        "articleDelimiter": "item",
+        "title": "title",
+        "link": "artictleTitle"
     }
 
 }
