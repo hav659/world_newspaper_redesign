@@ -1,4 +1,4 @@
-async function fetchXML(theURL, newsConfig) {
+async function fetchXML(theURL, newsConfig, outDivID, maxArticles) {
     const xmlParser = new DOMParser();
     const response = await fetch(theURL);
     const xmlString = await response.text();
@@ -48,22 +48,25 @@ async function fetchXML(theURL, newsConfig) {
         if (a == 0) {
             console.log("Example of what is being returned", articleJSON)
         }
-
-        allArticles.push(articleJSON)
+        if (allArticles.length < maxArticles){
+            console.log("Adding article. ",allArticles.length)
+            allArticles.push(articleJSON)
+        }
+        
     }
 
 
 
     console.log(allArticles[0])
 
-    createArticles(allArticles)
+    createArticles(allArticles, outDivID)
     return (allArticles)
 
 }
 
 
-function createArticles(jsonArray) {
-    console.log("work");
+function createArticles(jsonArray, outDivID) {
+    console.log("Load data into", outDivID);
 
     $.each(jsonArray, function (arrayKey, arrayItem) {
 
@@ -71,9 +74,9 @@ function createArticles(jsonArray) {
         var articleCard = `<div class="articleCard">
                             <div class="articleTitle">${arrayItem.title} </div>
                             <div class="author">${arrayItem.description}</div>
-                            <div class="doi"><a href="${arrayItem.link}">Get the article</a></div>
+                            <div class="link"><a href="${arrayItem.link}">Get the article</a></div>
                             </div>`
-        $("#outputDiv").append(articleCard)
+        $(outDivID).append(articleCard)
         /* console.log(jsonArray[arrayItem].year) */
         /* console.log(arrayItem.year) */
         /* items.push( "<li id='" + key + "'>" + val + "</li>" ); */
@@ -92,7 +95,7 @@ $(document).ready(function () {
     for (const newsPaper in rssFeedConfig) {
         console.log(newsPaper, rssFeedConfig[newsPaper].url)
         rssURL = rssFeedConfig[newsPaper].url;
-        rt = fetchXML(rssURL, rssFeedConfig[newsPaper]);
+        rt = fetchXML(rssURL, rssFeedConfig[newsPaper], "#POTDarticles", 2)
 
     }
 
