@@ -73,8 +73,8 @@ function createArticles(jsonArray, outDivID) {
         /* This is a template string a mixture of JS and HTML */
         var articleCard = `<div class="articleCard">
                             <div class="articleTitle">${arrayItem.title} </div>
-                            <div class="author">${arrayItem.description}</div>
-                            <div class="link"><a href="${arrayItem.link}">Get the article</a></div>
+                            <div class="articleDescription">${arrayItem.description}</div>
+                            <div ><a href="${arrayItem.link}" class="articleLink">Get the article</a></div>
                             </div>`
         $(outDivID).append(articleCard)
         /* console.log(jsonArray[arrayItem].year) */
@@ -88,17 +88,28 @@ function createArticles(jsonArray, outDivID) {
 
 $(document).ready(function () {
     console.log("What's up")
-    console.log(rssFeedConfig)
+    /* console.log(rssFeedConfig) */
+
 
 
     var rssURL = ''
-    for (const newsPaper in rssFeedConfig) {
-        console.log(newsPaper, rssFeedConfig[newsPaper].url)
-        rssURL = rssFeedConfig[newsPaper].url;
-        rt = fetchXML(rssURL, rssFeedConfig[newsPaper], "#POTDarticles", 2)
-
+    for (const newsPaper in leftPanelRSS) {
+        console.log(newsPaper, leftPanelRSS[newsPaper].url)
+        rssURL = leftPanelRSS[newsPaper].url;
+        rt = fetchXML(rssURL, leftPanelRSS[newsPaper], "#POTDarticles", 2)
     }
 
+/*     for (const newsPaper in rightPanelRSS) {
+        console.log(newsPaper, rightPanelRSS[newsPaper].url)
+        rssURL = rightPanelRSS[newsPaper].url;
+        rt = fetchXML(rssURL, rightPanelRSS[newsPaper], "#POTDarticles", 2)
+    } */
+
+    for (const newsPaper in mainPanelRSS) {
+        console.log(newsPaper, mainPanelRSS[newsPaper].url)
+        rssURL = mainPanelRSS[newsPaper].url;
+        rt = fetchXML(rssURL, mainPanelRSS[newsPaper], "#mainNews", 6)
+    }
     /* const rssURL = 'https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml'; */
 
 
