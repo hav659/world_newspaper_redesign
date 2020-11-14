@@ -10,7 +10,6 @@ var leftPanelRSS = {
 };
 
 
-
 var mainPanelRSS = {
     "New York Times": {
         "url": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",

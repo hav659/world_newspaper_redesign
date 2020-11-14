@@ -1,4 +1,4 @@
-async function fetchXML(theURL, newsConfig, outDivID, maxArticles) {
+async function fetchXML(theURL, newsConfig, outDivID, maxArticles, articleStyle) {
     const xmlParser = new DOMParser();
     const response = await fetch(theURL);
     const xmlString = await response.text();
@@ -48,7 +48,10 @@ async function fetchXML(theURL, newsConfig, outDivID, maxArticles) {
         if (a == 0) {
             console.log("Example of what is being returned", articleJSON)
         }
-        if (allArticles.length < maxArticles){
+
+        randomValue = Math.random()
+        console.log(randomValue)
+        if (allArticles.length < maxArticles && randomValue < .2){
             console.log("Adding article. ",allArticles.length)
             allArticles.push(articleJSON)
         }
@@ -58,8 +61,12 @@ async function fetchXML(theURL, newsConfig, outDivID, maxArticles) {
 
 
     console.log(allArticles[0])
-
-    createArticles(allArticles, outDivID)
+    if (articleStyle == 'blue'){
+        createArticles(allArticles, outDivID)
+    } else {
+        createWhiteArticles(allArticles, outDivID)
+    }
+        
     return (allArticles)
 
 }
@@ -72,6 +79,26 @@ function createArticles(jsonArray, outDivID) {
 
         /* This is a template string a mixture of JS and HTML */
         var articleCard = `<div class="articleCard">
+                            <div class="articleTitle">${arrayItem.title} </div>
+                            <div class="articleDescription">${arrayItem.description}</div>
+                            <div ><a href="${arrayItem.link}" class="articleLink">Get the article</a></div>
+                            </div>`
+        $(outDivID).append(articleCard)
+        /* console.log(jsonArray[arrayItem].year) */
+        /* console.log(arrayItem.year) */
+        /* items.push( "<li id='" + key + "'>" + val + "</li>" ); */
+    });
+
+};
+
+
+function createWhiteArticles(jsonArray, outDivID) {
+    console.log("Load data into", outDivID);
+
+    $.each(jsonArray, function (arrayKey, arrayItem) {
+
+        /* This is a template string a mixture of JS and HTML */
+        var articleCard = `<div class="whiteArticleCard">
                             <div class="articleTitle">${arrayItem.title} </div>
                             <div class="articleDescription">${arrayItem.description}</div>
                             <div ><a href="${arrayItem.link}" class="articleLink">Get the article</a></div>
@@ -96,7 +123,7 @@ $(document).ready(function () {
     for (const newsPaper in leftPanelRSS) {
         console.log(newsPaper, leftPanelRSS[newsPaper].url)
         rssURL = leftPanelRSS[newsPaper].url;
-        rt = fetchXML(rssURL, leftPanelRSS[newsPaper], "#POTDarticles", 2)
+        rt = fetchXML(rssURL, leftPanelRSS[newsPaper], "#POTDarticles", 2, "white") 
     }
 
 /*     for (const newsPaper in rightPanelRSS) {
@@ -108,7 +135,7 @@ $(document).ready(function () {
     for (const newsPaper in mainPanelRSS) {
         console.log(newsPaper, mainPanelRSS[newsPaper].url)
         rssURL = mainPanelRSS[newsPaper].url;
-        rt = fetchXML(rssURL, mainPanelRSS[newsPaper], "#mainNews", 6)
+        rt = fetchXML(rssURL, mainPanelRSS[newsPaper], "#mainNews", 6, "blue")
     }
     /* const rssURL = 'https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml'; */
 
