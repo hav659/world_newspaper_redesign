@@ -79,7 +79,7 @@ function createArticles(jsonArray, outDivID) {
     $.each(jsonArray, function (arrayKey, arrayItem) {
         console.log(arrayKey)
         /* This is a template string a mixture of JS and HTML */
-        var articleCard = `<div class="card col-md-12 blueArticleCard">
+        var articleCard = `<div class="card text-center col-md-6 col-sm-12 blueArticleCard">
                             <div class="card-body">
                                 <div class="articleTitle">${arrayItem.title} </div>
                                 <div ><a href="${arrayItem.link}" class="articleLink"><img src="img/globe.svg" alt="globe"> Read the article</a></div>
