@@ -50,9 +50,9 @@ async function fetchXML(theURL, newsConfig, outDivID, maxArticles, articleStyle)
         }
 
         randomValue = Math.random()
-        console.log(randomValue)
+        /* console.log(randomValue) */
         if (allArticles.length < maxArticles && randomValue < .2) {
-            console.log("Adding article. ", allArticles.length)
+            /* console.log("Adding article. ", allArticles.length) */
             allArticles.push(articleJSON)
         }
 
@@ -79,9 +79,11 @@ function createArticles(jsonArray, outDivID) {
     $.each(jsonArray, function (arrayKey, arrayItem) {
         console.log(arrayKey)
         /* This is a template string a mixture of JS and HTML */
-        var articleCard = `<div class="card blueArticleCard col-md-3 col-sm-12">
-                            <div class="articleTitle">${arrayItem.title} </div>
-                            <div ><a href="${arrayItem.link}" class="articleLink"><img src="img/globe.svg" alt="globe"> Read the article</a></div>
+        var articleCard = `<div class="card col-md-12 blueArticleCard">
+                            <div class="card-body">
+                                <div class="articleTitle">${arrayItem.title} </div>
+                                <div ><a href="${arrayItem.link}" class="articleLink"><img src="img/globe.svg" alt="globe"> Read the article</a></div>
+                            </div>
                             </div>`
         articleCards = articleCards + articleCard
         
