@@ -74,21 +74,32 @@ async function fetchXML(theURL, newsConfig, outDivID, maxArticles, articleStyle)
 
 function createArticles(jsonArray, outDivID) {
     console.log("Load data into", outDivID);
+    articleCards = ''
 
     $.each(jsonArray, function (arrayKey, arrayItem) {
-
+        console.log(arrayKey)
         /* This is a template string a mixture of JS and HTML */
-        var articleCard = `<div class="articleCard">
+        var articleCard = `<div class="articleCard col-md-6 col-sm12">
                             <div class="articleTitle">${arrayItem.title} </div>
-                            <div class="articleDescription">${arrayItem.description}</div>
-                            <div ><a href="${arrayItem.link}" class="articleLink">Get the article</a></div>
+                            <div ><a href="${arrayItem.link}" class="articleLink"><img src="img/globe.svg" alt="globe"> Read the article</a></div>
                             </div>`
-        $(outDivID).append(articleCard)
+        articleCards = articleCards + articleCard
+        
         /* console.log(jsonArray[arrayItem].year) */
         /* console.log(arrayItem.year) */
         /* items.push( "<li id='" + key + "'>" + val + "</li>" ); */
+        if (arrayKey % 2 == 0) {
+            console.log(arrayKey)
+        } else {
+            console.log(arrayKey)
+            articleRow = '<div class="row">' + articleCards + '</div>'
+            $(outDivID).append(articleRow)
+            /* $("#outputDiv").append(articleRow) */
+            articleCards = ''
+        };
     });
-
+    
+    
 };
 
 
