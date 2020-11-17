@@ -2,6 +2,21 @@
   background-color: #FDFAEE;
 }
 
+/* NOTE: NAVBAR SMARTSCROLL
+.smart-scroll{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+.scrolled-down{
+   transform:translateY(-100%); transition: all 0.3s ease-in-out;
+}
+.scrolled-up{
+   transform:translateY(0); transition: all 0.3s ease-in-out;
+}*/
+
 .reset-anchor {
   color: inherit;
   border: none;
@@ -160,7 +175,7 @@ h6,
 }
 .blueArticleCard {
   margin-bottom: 10px !important;
-  
+
   border: none;
   background-color: #0A5E88;
   color: white;
