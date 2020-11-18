@@ -29,3 +29,8 @@ console.log("smartScrollLength   ", $('.smart-scroll').length)
       }
 
 }); //close readyFunction
+
+//modal
+$('#subscribeButton').on('shown.bs.modal', function () {
+    $('#subscribeModal').trigger('focus')
+})

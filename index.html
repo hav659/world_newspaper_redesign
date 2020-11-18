@@ -65,7 +65,8 @@
           </div>
 
           <div class="col-4 d-none d-lg-block text-right">
-            <button type="button" class="btn btn-primary border-0">Subscribe</button>
+            <button id="subscribeButton" type="button" class="btn btn-primary border-0" data-toggle="modal"
+              data-target="#exampleModal">Subscribe</button>
           </div>
         </div>
       </div>
@@ -86,7 +87,7 @@
       <button class="navbar-toggler navbar-toggler-right mx-auto border-0" type="button" data-toggle="collapse"
         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse text-center"id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link active" href="index.html">World</a>
@@ -290,10 +291,6 @@
         </div>
       </div>
 
-
-
-
-
 <!-- NOTE: COLUMN RIGHT -->
       <div class="col mx-auto text-center">
         <h3>BREAKING NEWS</h3><hr>
@@ -335,9 +332,9 @@
       <div class="col-lg-4 col-md-6 mb-lg-0">
         <h6 class="text-uppercase font-weight-bold mb-4">Like our news?</h6>
         <p class="text-muted mb-4">Sign up to recieve regular (or less regular, if that's your style) updates on world news.</p>
-        <div class="p-1 rounded border">
+        <div class="p-1 rounded">
           <div class="input-group">
-            <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
+            <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border rounded shadow-0">
             <div class="input-group-append">
               <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
             </div>
@@ -348,6 +345,47 @@
   </div>
 </footer>
 
+<!-- SUBSCRIBE MODAL -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Subscribe to World Newspapers</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">First Name</label>
+              <input type="text" class="form-control" id="fName" aria-describedby="emailHelp" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Last Name</label>
+              <input type="text" class="form-control" id="lName" aria-describedby="emailHelp" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
