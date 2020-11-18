@@ -116,7 +116,7 @@ function createWhiteArticles(jsonArray, outDivID) {
                             </div>`
         $(outDivID).append(articleCard)
 
-        
+        $("#.pg2Content")
         console.log($('#pg2Content').width)
         /* console.log(jsonArray[arrayItem].year) */
         /* console.log(arrayItem.year) */

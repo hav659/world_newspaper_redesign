@@ -232,6 +232,13 @@ h6,
 
 }
 
+.footerName{
+  font-size : 18px;
+}
+
+.slogan{
+  font-style: italic !important;
+}
 
 /* tablets */
 @media only screen and (max-width: 768px) {
