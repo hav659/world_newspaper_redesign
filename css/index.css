@@ -15,7 +15,7 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: 10000;
 }
 .scrolled-down{
    transform:translateY(-100%); transition: all 0.3s ease-in-out;
