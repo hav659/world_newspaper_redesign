@@ -165,6 +165,12 @@ h6,
   border-left:1px solid #000;
 }
 
+
+
+#pg2HR{
+  padding-top: -10px !important;
+}
+
 .list-group-item{
   background-color: #FDFAEE ;
 
