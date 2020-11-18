@@ -11,9 +11,6 @@ $(document).ready(function () {
         rt = fetchXML(rssURL, mainPanelRSS[newsPaper], "#mainNews", 10, "blue")
     };
 
-    $("#subscribeButton").on("click", function () {
-        console.log("I was clicked")
-    });
 
     $('#subscribeButton').on('shown.bs.modal', function () {
         $('#subscribeModal').trigger('focus')

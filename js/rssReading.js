@@ -80,7 +80,6 @@ function createArticles(jsonArray, outDivID) {
         /* This is a template string a mixture of JS and HTML */
         var articleCard = `<div class="articleCard">
                             <div class="articleTitle">${arrayItem.title} </div>
-                            <div class="articleDescription">${arrayItem.description}</div>
                             <div ><a href="${arrayItem.link}" class="articleLink">Get the article</a></div>
                             </div>`
         $(outDivID).append(articleCard)
@@ -100,7 +99,6 @@ function createWhiteArticles(jsonArray, outDivID) {
         /* This is a template string a mixture of JS and HTML */
         var articleCard = `<div class="whiteArticleCard">
                             <div class="articleTitle">${arrayItem.title} </div>
-                            <div class="articleDescription">${arrayItem.description}</div>
                             <div ><a href="${arrayItem.link}" class="articleLink">Get the article</a></div>
                             </div>`
         $(outDivID).append(articleCard)
