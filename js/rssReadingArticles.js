@@ -115,6 +115,9 @@ function createWhiteArticles(jsonArray, outDivID) {
                             <div ><a href="${arrayItem.link}" class="articleLink">Get the article</a></div>
                             </div>`
         $(outDivID).append(articleCard)
+
+        
+        console.log($('#pg2Content').width)
         /* console.log(jsonArray[arrayItem].year) */
         /* console.log(arrayItem.year) */
         /* items.push( "<li id='" + key + "'>" + val + "</li>" ); */

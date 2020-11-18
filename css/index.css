@@ -214,26 +214,15 @@ h6,
     padding-bottom: 5px;
 }
 
-.articleYear {
-
-    padding-bottom: 5px;
-
-}
-
-.articleJournal {
-
-    font-style: italic;
-    font-size: 18px;
-}
-
-.articleDescription{
-    font-size: 12px;
-
-}
-
 .articleLink{
   color: black;
   font-size: 10px;
+
+}
+
+.footer{
+  margin-left: 15%;
+  margin-right: 15%;
 
 }
 
