@@ -133,7 +133,7 @@ $(document).ready(function () {
     for (const newsPaper in mainPanelRSS) {
         console.log(newsPaper, mainPanelRSS[newsPaper].url)
         rssURL = mainPanelRSS[newsPaper].url;
-        rt = fetchXML(rssURL, mainPanelRSS[newsPaper], "#mainNews", 6, "blue")
+        rt = fetchXML(rssURL, mainPanelRSS[newsPaper], "#mainNews", 8, "blue")
     }
     /* const rssURL = 'https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml'; */
 
