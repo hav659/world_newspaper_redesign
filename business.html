@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>World Business News</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -17,11 +16,17 @@
   <!-- <script src="js/articles.js"></script> -->
   <!-- Hotjar Tracking Code for https://dahaynes.github.io/ -->
   <script>
-    (function (h, o, t, j, a, r) {
-      h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-      h._hjSettings = { hjid: 2071530, hjsv: 6 };
+    (function(h, o, t, j, a, r) {
+      h.hj = h.hj || function() {
+        (h.hj.q = h.hj.q || []).push(arguments)
+      };
+      h._hjSettings = {
+        hjid: 2071530,
+        hjsv: 6
+      };
       a = o.getElementsByTagName('head')[0];
-      r = o.createElement('script'); r.async = 1;
+      r = o.createElement('script');
+      r.async = 1;
       r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
       a.appendChild(r);
     })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
@@ -30,7 +35,10 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKMFB4G7KN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'G-RKMFB4G7KN');
@@ -41,110 +49,108 @@
 
 <body>
   <!-- Header-->
-    <header class="header">
-      <!-- Navbar Upper -->
-      <div class="py-2 text-dark " style="background-color: #FDFAEE;">
-        <div class="container py-1">
-          <div class="row align-items-center">
+  <header class="header">
+    <!-- Navbar Upper -->
+    <div class="py-2 text-dark " style="background-color: #FDFAEE;">
+      <div class="container py-1">
+        <div class="row align-items-center">
 
-            <div class="col-lg-4">
-              <ul class="list-inline mb-0 text-small">
-                <li class="list-inline-item"><a class="reset-anchor" href="#">About us</a></li>
-                <li class="list-inline-item">|</li>
-                <li class="list-inline-item"><a class="reset-anchor" href="#">Sitemap</a></li>
-                <li class="list-inline-item">|</li>
-                <li class="list-inline-item"><a class="reset-anchor" href="#">Search</a></li>
-              </ul>
-            </div>
+          <div class="col-lg-4">
+            <ul class="list-inline mb-0 text-small">
+              <li class="list-inline-item"><a class="reset-anchor" href="#">About us</a></li>
+              <li class="list-inline-item">|</li>
+              <li class="list-inline-item"><a class="reset-anchor" href="#">Sitemap</a></li>
+              <li class="list-inline-item">|</li>
+              <li class="list-inline-item"><a class="reset-anchor" href="#">Search</a></li>
+            </ul>
+          </div>
 
-            <div class="col-lg-4 d-none d-lg-block text-center">
-              <ul class="list-inline mb-0 small">
-                <li class="list-inline-item"><a class="reset-anchor" href="#">Asia</a></li>
-                <li class="list-inline-item"><a class="reset-anchor" href="#">Europe</a></li>
-                <li class="list-inline-item"><a class="reset-anchor" href="#">North America</a></li>
-                <li class="list-inline-item"><a class="reset-anchor" href="#">South America</a></li>
-                <li class="list-inline-item"><a class="reset-anchor" href="#">Oceania</a></li>
-              </ul>
-            </div>
+          <div class="col-lg-4 d-none d-lg-block text-center">
+            <ul class="list-inline mb-0 small">
+              <li class="list-inline-item"><a class="reset-anchor" href="#">Asia</a></li>
+              <li class="list-inline-item"><a class="reset-anchor" href="#">Europe</a></li>
+              <li class="list-inline-item"><a class="reset-anchor" href="#">North America</a></li>
+              <li class="list-inline-item"><a class="reset-anchor" href="#">South America</a></li>
+              <li class="list-inline-item"><a class="reset-anchor" href="#">Oceania</a></li>
+            </ul>
+          </div>
 
-            <div class="col-4 d-none d-lg-block text-right">
-              <button id="subscribeButton" type="button" class="btn btn-primary border-0" data-toggle="modal"
-                data-target="#exampleModal">Subscribe</button>
-            </div>
+          <div class="col-4 d-none d-lg-block text-right">
+            <button id="subscribeButton" type="button" class="btn btn-primary border-0" data-toggle="modal" data-target="#exampleModal">Subscribe</button>
           </div>
         </div>
       </div>
-      <!-- Navbar Middle -->
-      <nav class="navbar navbar-expand-lg navbar-light py-4" style="background-color: #FDFAEE;">
-        <div class="container text-center">
-          <a class="navbar-brand mx-auto" href="index.html">
-            <img src="img/WNP_Logo.svg" alt="">
-          </a>
-        </div>
-      </nav>
-
-    </header>
-    <!-- Navbar Lower -->
-  <nav id="sticky" class="navbar navbar-expand-xl navbar-light border-top border-bottom" style="background-color: #FDFAEE; margin-bottom: 2em;">
-      <div class="container">
-        <button class="navbar-toggler navbar-toggler-right mx-auto border-0" type="button" data-toggle="collapse"
-          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">World</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="business.html">Business</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Tech</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Sports</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Travel</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Culture</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Education</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Science</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Arts</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Transport</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Religion</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Crime</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Entertainment</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Environment</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Politics</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#.html">Health</a>
-            </li>
-          </ul>
-        </div>
+    </div>
+    <!-- Navbar Middle -->
+    <nav class="navbar navbar-expand-lg navbar-light py-4" style="background-color: #FDFAEE;">
+      <div class="container text-center">
+        <a class="navbar-brand mx-auto" href="index.html">
+          <img src="img/WNP_Logo.svg" alt="">
+        </a>
       </div>
     </nav>
-<!-- END NAV -->
+
+  </header>
+  <!-- Navbar Lower -->
+  <nav id="sticky" class="navbar navbar-expand-xl navbar-light border-top border-bottom" style="background-color: #FDFAEE; margin-bottom: 2em;">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right mx-auto border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">World</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="business.html">Business</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Tech</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Sports</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Travel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Culture</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Education</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Science</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Arts</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Transport</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Religion</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Crime</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Entertainment</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Environment</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Politics</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#.html">Health</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END NAV -->
 
   <div id="pg2Content" class="container">
     <div class="row">
@@ -190,21 +196,20 @@
     </div>
     <hr id="pg2HR">
 
-  <!-- NOTE: RSS FEED -->
+    <!-- NOTE: RSS FEED -->
     <div class="row">
       <h1>News Articles</h1>
     </div>
     <div class="row">
-        <div id="mainNews" class="container card-deck">
-        </div>
+      <div id="mainNews" class="container card-deck">
+      </div>
     </div>
   </div>
 
 
 
-<!-- SUBSCRIBE MODAL -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+  <!-- SUBSCRIBE MODAL -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -225,8 +230,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter email">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
@@ -245,56 +249,51 @@
   </div>
 
 
-
-
-
-
-<!-- Footer -->
-<hr class="mt-5"><footer class="pt-5 mx-auto">
-<div class="container py-5">
-  <div class="row py-4">
-    <div class="text-center col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
-      <p class="font-italic">“Newspapers cannot be defined by the second word, <br> <strong>paper.</strong><br>They’ve got to be defined by the first word,<br> <strong>news.</strong>”<br>
-  <strong>- Arthur Sulzberg, Jr.</strong></p>
-      <ul class="list-inline mt-4">
-        <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
-        <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
-        <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
-        <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
-        <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
-      </ul>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 text-center">
-      <h6 class="text-uppercase font-weight-bold mb-4">More</h6>
-      <ul class="list-unstyled mb-0">
-        <li class="mb-2"><a href="#" class="text-muted">About World-Newspapers</a></li>
-        <li class="mb-2"><a href="#" class="text-muted">Sitemap</a></li>
-        <li class="mb-2"><a href="#" class="text-muted">A big list of all our links</a></li>
-      </ul>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-lg-0">
-      <h6 class="text-uppercase font-weight-bold mb-4">Like our news?</h6>
-      <p class="text-muted mb-4">Sign up to recieve regular (or less regular, if that's your style) updates on world news.</p>
-      <div class="p-1 rounded">
-        <div class="input-group">
-          <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border rounded shadow-0">
-          <div class="input-group-append">
-            <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
+  <!-- Footer -->
+  <hr class="mt-5">
+  <footer class="pt-5 mx-auto">
+    <div class="container py-5">
+      <div class="row py-4">
+        <div class="text-center col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
+          <p class="font-italic">“Newspapers cannot be defined by the second word, <br> <strong>paper.</strong><br>They’ve got to be defined by the first word,<br> <strong>news.</strong>”<br>
+            <strong>- Arthur Sulzberg, Jr.</strong>
+          </p>
+          <ul class="list-inline mt-4">
+            <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 text-center">
+          <h6 class="text-uppercase font-weight-bold mb-4">More</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-muted">About World-Newspapers</a></li>
+            <li class="mb-2"><a href="#" class="text-muted">Sitemap</a></li>
+            <li class="mb-2"><a href="#" class="text-muted">A big list of all our links</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Like our news?</h6>
+          <p class="text-muted mb-4">Sign up to recieve regular (or less regular, if that's your style) updates on world news.</p>
+          <div class="p-1 rounded">
+            <div class="input-group">
+              <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border rounded shadow-0">
+              <div class="input-group-append">
+                <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-</footer>
+  </footer>
 
 </body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </html>
