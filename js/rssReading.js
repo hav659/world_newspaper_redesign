@@ -55,7 +55,7 @@ async function fetchXML(theURL, newsConfig, outDivID, maxArticles, articleStyle)
             console.log("Adding article. ",allArticles.length)
             allArticles.push(articleJSON)
         }
-        
+
     }
 
 
@@ -66,7 +66,7 @@ async function fetchXML(theURL, newsConfig, outDivID, maxArticles, articleStyle)
     } else {
         createWhiteArticles(allArticles, outDivID)
     }
-        
+
     return (allArticles)
 
 }
@@ -80,7 +80,7 @@ function createArticles(jsonArray, outDivID) {
         /* This is a template string a mixture of JS and HTML */
         var articleCard = `<div class="articleCard">
                             <div class="articleTitle">${arrayItem.title} </div>
-                            <div ><a href="${arrayItem.link}" class="articleLink">Get the article</a></div>
+                            <div ><a href="${arrayItem.link}" class="articleLink">Read the article</a></div>
                             </div>`
         $(outDivID).append(articleCard)
         /* console.log(jsonArray[arrayItem].year) */
@@ -99,7 +99,7 @@ function createWhiteArticles(jsonArray, outDivID) {
         /* This is a template string a mixture of JS and HTML */
         var articleCard = `<div class="whiteArticleCard">
                             <div class="articleTitle">${arrayItem.title} </div>
-                            <div ><a href="${arrayItem.link}" class="articleLink">Get the article</a></div>
+                            <div ><a href="${arrayItem.link}" class="articleLink">Read the article</a></div>
                             </div>`
         $(outDivID).append(articleCard)
         /* console.log(jsonArray[arrayItem].year) */
@@ -121,7 +121,7 @@ $(document).ready(function () {
     for (const newsPaper in leftPanelRSS) {
         console.log(newsPaper, leftPanelRSS[newsPaper].url)
         rssURL = leftPanelRSS[newsPaper].url;
-        rt = fetchXML(rssURL, leftPanelRSS[newsPaper], "#POTDarticles", 2, "white") 
+        rt = fetchXML(rssURL, leftPanelRSS[newsPaper], "#POTDarticles", 2, "white")
     }
 
 /*     for (const newsPaper in rightPanelRSS) {

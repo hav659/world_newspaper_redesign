@@ -82,11 +82,11 @@ function createArticles(jsonArray, outDivID) {
         var articleCard = `<div class="card text-center col-md-6 col-sm-12 blueArticleCard">
                             <div class="card-body">
                                 <div class="articleTitle">${arrayItem.title} </div>
-                                <div ><a href="${arrayItem.link}" class="articleLink"><img src="img/globe.svg" alt="globe"> Read the article</a></div>
+                                <div ><a href="${arrayItem.link}" class="articleLink"><img src="img/globe.svg" alt="globe">Read the article</a></div>
                             </div>
                             </div>`
         articleCards = articleCards + articleCard
-        
+
 
         if (arrayKey % 2 == 0) {
             console.log(arrayKey)
@@ -98,8 +98,8 @@ function createArticles(jsonArray, outDivID) {
             articleCards = ''
         };
     });
-    
-    
+
+
 };
 
 
@@ -112,7 +112,7 @@ function createWhiteArticles(jsonArray, outDivID) {
         var articleCard = `<div class="whiteArticleCard">
                             <div class="articleTitle">${arrayItem.title} </div>
                             <div class="articleDescription">${arrayItem.description}</div>
-                            <div ><a href="${arrayItem.link}" class="articleLink">Get the article</a></div>
+                            <div ><a href="${arrayItem.link}" class="articleLink">Read the article</a></div>
                             </div>`
         $(outDivID).append(articleCard)
 
