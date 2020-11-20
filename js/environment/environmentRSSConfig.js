@@ -3,11 +3,18 @@ const corsAnywhere = "https://cors-anywhere.herokuapp.com/";
 
 
 var mainPanelRSS = {
-    "New York Times": {
-        "url": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+    "The Ecologist": {
+        "url": corsAnywhere + "https://theecologist.org/whats_new/feed",
         "articleDelimiter": "item",
         "title": "title",
         "link": "link"
-    }
+    },
+
+    "Grist": {
+        "url": corsAnywhere + "https://grist.org/feed/",
+        "articleDelimiter": "item",
+        "title": "title",
+        "link": "link"
+    },
 };
 
