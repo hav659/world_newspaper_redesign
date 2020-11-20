@@ -80,7 +80,7 @@ function createArticles(jsonArray, outDivID) {
         /* This is a template string a mixture of JS and HTML */
         var articleCard = `<div class="articleCard">
                             <div class="articleTitle">${arrayItem.title} </div>
-                            <div ><a href="${arrayItem.link}" class="articleLink">Read the article</a></div>
+                            <div ><a href="${arrayItem.link}" class="articleLink"  style='font-size: 1.2em';>Read the article</a></div>
                             </div>`
         $(outDivID).append(articleCard)
         /* console.log(jsonArray[arrayItem].year) */
