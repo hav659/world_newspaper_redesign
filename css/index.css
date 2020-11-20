@@ -2,7 +2,7 @@
   background-color: #FDFAEE;
 }
 
-#sticky-.fixed {
+#sticky.fixed {
     display: block;
     position: fixed;
     top: 0;
