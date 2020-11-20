@@ -218,8 +218,15 @@ h6,
 .articleLink{
   color: black;
   font-size: 10px;
-
 }
+
+/* LINK STYLING */
+
+.homelink {
+  font-size: 1em;
+  color: #0A5E88;
+}
+
 /* FOOTER */
 #button-addon1 {
   color: #ffc371;
