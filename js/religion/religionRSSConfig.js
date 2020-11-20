@@ -16,5 +16,19 @@ var mainPanelRSS = {
         "title": "title",
         "link": "link"
     },
+
+    "Religion News Service": {
+        "url": corsAnywhere + "https://religionnews.com/feed/",
+        "articleDelimiter": "item",
+        "title": "title",
+        "link": "link"
+    },
+
+    "LSE Religion and Global Society": {
+        "url": corsAnywhere + "https://blogs.lse.ac.uk/religionglobalsociety/feed/",
+        "articleDelimiter": "item",
+        "title": "title",
+        "link": "link"
+    },
 };
 
