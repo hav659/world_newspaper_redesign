@@ -82,7 +82,7 @@ function createArticles(jsonArray, outDivID) {
         var articleCard = `<div class="card text-center col-md-6 col-sm-12 blueArticleCard">
                             <div class="card-body">
                                 <div class="articleTitle">${arrayItem.title} </div>
-                                <div ><a href="${arrayItem.link}" class="articleLink"><img src="img/globe.svg" alt="globe">Read the article</a></div>
+                                <div><a href="${arrayItem.link}" class="articleLink"><img src="img/globe.svg" alt="globe">Read the article</a></div>
                             </div>
                             </div>`
         articleCards = articleCards + articleCard
