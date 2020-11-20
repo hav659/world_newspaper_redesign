@@ -16,5 +16,12 @@ var mainPanelRSS = {
         "title": "title",
         "link": "link"
     },
+
+    "Centre for Science and Environment": {
+        "url": corsAnywhere + "https://rss2.feedspot.com/https://www.cseindia.org/",
+        "articleDelimiter": "item",
+        "title": "title",
+        "link": "link"
+    },
 };
 
